@@ -1,0 +1,112 @@
+/* 
+Using the screenshots, recreate the three views of the supplied code.  
+The mobile view has 1 column with 9 rows, the table view is 2 columns and six rows, 
+and the large view is 4 columns and five rows. 
+*/
+
+h1, footer{
+  padding:5px;
+  text-align: center;
+}
+
+footer{
+  background: black;
+  color: white;
+  width: 93.5vw;
+  margin: auto;
+  margin-top:5px;
+}
+.container{
+  /*YOUR CODE HERE:*/
+  display: grid;
+  grid-row-gap: 5px;
+  /*YOUR CODE HERE:*/
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9,350px);
+  margin: auto;
+  width: 95vw;
+}
+
+.container div{
+  /*YOUR CODE HERE:*/
+  overflow: hidden;
+}
+
+
+
+@media all and (min-width:720px){
+  /*YOUR CODE HERE:*/
+	.container{
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(6,350px);
+		grid-row-gap: 0px;
+  }
+  
+  .img-three, .img-six, .img-seven{
+    grid-column: 1 / span 2;
+  }
+
+  .img-seven{
+    grid-row: 6 / span 1;
+  }
+
+  .img-nine{
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+  }
+
+}
+@media only screen and (min-width: 1024px){
+    /*YOUR CODE HERE:*/
+    /* the large view is 4 columns and five rows.  */
+    .container{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: repeat(5,350px);
+    }
+
+    .img{
+      overflow: hidden;
+    }
+
+    .img-two{
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+    }
+
+    .img-one, .img-three{
+      grid-column: 3 / span 2;
+      grid-column: 3 / span 2;
+    }
+
+    .img-five, .img-four, .img-six {
+      grid-row: 3 / span 1;
+    }
+
+    .img-five{
+      grid-column: 1 / span 1;
+    }
+
+    .img-four{
+      grid-column: 2 / span 1;
+    }
+
+    .img-six{
+      grid-column: 3 / span 1;
+    }
+
+    .img-seven{
+      grid-column: 2 / span 2;
+      grid-row: 4 / span 2;
+    }
+
+    .img-nine{
+      grid-column: 4 / span 1;
+      grid-row: 3 / -1;
+    }
+
+    .img-eight{
+      grid-column: 1 / span 1;
+      grid-row: 4 / -1;
+    }
+
+}
